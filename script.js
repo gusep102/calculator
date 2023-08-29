@@ -1,3 +1,4 @@
+// functions
 function add(a, b) {
     return a + b;
 }
@@ -12,6 +13,20 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return a / b;
+}
+
+function operate(num1, num2, ope) {
+    if (ope == '+') {
+        return add(num1,num2);
+    } else if (ope == '-') {
+        return subtract(num1,num2);
+    } else if (ope == '*') {
+        return multiply(num1,num2);
+    } else if (ope == '/') {
+        return divide(num1,num2);
+    } else {
+        return 'ERROR';
+    }
 }
 
 // test
