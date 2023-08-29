@@ -17,13 +17,13 @@ function divide(a, b) {
 
 function operate(num1, num2, ope) {
     if (ope == '+') {
-        return add(num1,num2);
+        return add(num1,num2).toFixed(3);
     } else if (ope == '-') {
-        return subtract(num1,num2);
+        return subtract(num1,num2).toFixed(3);
     } else if (ope == '*') {
-        return multiply(num1,num2);
+        return multiply(num1,num2).toFixed(3);
     } else if (ope == '/') {
-        return divide(num1,num2);
+        return divide(num1,num2).toFixed(3);
     } else {
         return 'ERROR';
     }
@@ -83,12 +83,13 @@ buttons.forEach((button) => {
         }
        }else if (button.textContent == '=') {
             console.log(`${num1} ${ope} ${num2} =`);
-            displayValue = operate(Number.parseInt(num1), Number.parseInt(num2), ope);
+            displayValue = operate(Number.parseFloat(num1), Number.parseFloat(num2), ope);
 
             if (displayValue == Infinity) {
-                displayValue = ';3c';
-                alert(`its the end of the world as we know it`);
+                displayValue = '🗿🗿🗿';
+                alert(`🗿🗿🗿`);
             }
+
             updateDisplay(displayValue);
 
             num1 = displayValue;
