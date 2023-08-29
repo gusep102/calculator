@@ -17,13 +17,13 @@ function divide(a, b) {
 
 function operate(num1, num2, ope) {
     if (ope == '+') {
-        return add(num1,num2).toFixed(3);
+        return add(num1,num2);
     } else if (ope == '-') {
-        return subtract(num1,num2).toFixed(3);
+        return subtract(num1,num2);
     } else if (ope == '*') {
-        return multiply(num1,num2).toFixed(3);
+        return multiply(num1,num2);
     } else if (ope == '/') {
-        return divide(num1,num2).toFixed(3);
+        return divide(num1,num2);
     } else {
         return 'ERROR';
     }
@@ -32,8 +32,6 @@ function operate(num1, num2, ope) {
 function updateDisplay(string) {
     screenDisplay = document.querySelector('.display');
     screenDisplay.textContent = string;
-    console.log(screenDisplay.textContent);
-
 }
 
 // test
@@ -56,9 +54,7 @@ buttons.forEach((button) => {
 
        if (button.textContent == '/' || button.textContent == '*' || button.textContent == '-' || button.textContent == '+') {
             if (num1 == '') {
-                console.log(`no num1`);
             } else if(num1 != '' && num2 != '') {
-                console.log(`${num1} ${ope} ${num2} =`);
                 displayValue = operate(Number.parseInt(num1), Number.parseInt(num2), ope);
                 updateDisplay(displayValue);
 
@@ -67,22 +63,18 @@ buttons.forEach((button) => {
                 num2 = '';
             }else {
                 ope = button.textContent;
-                console.log(`ope is set to ${ope}`);
             }
        }else if (button.textContent >=0 && button.textContent < 10) {
             if (ope == '') {
                 num1 += button.textContent;
-                console.log(`num1 assign ${num1}`);
                 displayValue = num1;
        updateDisplay(displayValue);
         } else {
             num2 += button.textContent;
-            console.log(`num2 assigned ${num2}`);
             displayValue = num2;
             updateDisplay(displayValue);
         }
        }else if (button.textContent == '=') {
-            console.log(`${num1} ${ope} ${num2} =`);
             displayValue = operate(Number.parseFloat(num1), Number.parseFloat(num2), ope);
 
             if (displayValue == Infinity) {
@@ -101,17 +93,9 @@ buttons.forEach((button) => {
             ope = '';
             displayValue= '0';
             updateDisplay(displayValue);
-            console.log(`cleared`);
 
        }
        
 
     })
 })
-
-
-// test
-console.log(operate(a,b,'+'));
-console.log(operate(a,b,'-'));
-console.log(operate(a,b,'*'));
-console.log(operate(a,b,'/'));
