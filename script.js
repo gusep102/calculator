@@ -19,6 +19,14 @@ function divide(a, b) {
 let a = 4;
 let b =5;
 
+// variables
+let num1;
+let num2;
+let ope;
+
+
+
+// test
 console.log(add(a,b));
 console.log(subtract(a,b));
 console.log(multiply(a,b));
