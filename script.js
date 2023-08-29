@@ -42,7 +42,7 @@ let ope;
 
 
 // test
-console.log(add(a,b));
-console.log(subtract(a,b));
-console.log(multiply(a,b));
-console.log(divide(a,b));
+console.log(operate(a,b,'+'));
+console.log(operate(a,b,'-'));
+console.log(operate(a,b,'*'));
+console.log(operate(a,b,'/'));
