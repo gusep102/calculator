@@ -13,8 +13,22 @@
 
 body.container{
     flex-direction: column;
+    align-items: center;
+
+}
+
+.calculator {
+    flex-direction: column;
+}
+
+.button-row {
+    justify-content: center;
 }
 
 .display {
     text-align: end;
+}
+
+button{
+    flex: 1 1 auto;
 }
